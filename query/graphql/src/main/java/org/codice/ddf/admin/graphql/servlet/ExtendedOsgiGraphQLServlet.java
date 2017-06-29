@@ -124,6 +124,9 @@ public class ExtendedOsgiGraphQLServlet extends OsgiGraphQLServlet {
     }
 
     public void bindFieldProvider(FieldProvider fieldProvider) {
+        if(fieldProvider == null) {
+            return;
+        }
 
         if (CollectionUtils.isNotEmpty(fieldProvider.getDiscoveryFields())) {
             LOGGER.debug("Binding queries of field provider {} to graphql servlet.",
@@ -158,6 +161,10 @@ public class ExtendedOsgiGraphQLServlet extends OsgiGraphQLServlet {
     }
 
     public void unbindFieldProvider(FieldProvider fieldProvider) {
+        if(fieldProvider == null) {
+            return;
+        }
+
         if (CollectionUtils.isNotEmpty(fieldProvider.getDiscoveryFields())) {
             LOGGER.debug("Unbinding queries of field provider {} to graphql servlet.",
                     fieldProvider.fieldName());
