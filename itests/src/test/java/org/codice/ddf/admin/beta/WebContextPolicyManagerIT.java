@@ -1,4 +1,3 @@
-package org.codice.ddf.admin.beta;
 /**
  * Copyright (c) Codice Foundation
  * <p>
@@ -12,6 +11,7 @@ package org.codice.ddf.admin.beta;
  * is distributed along with this program and can be found at
  * <http://www.gnu.org/licenses/lgpl.html>.
  **/
+package org.codice.ddf.admin.beta;
 
 import static org.codice.ddf.admin.security.common.services.StsServiceProperties.STS_CLAIMS_PROPS_KEY_CLAIMS;
 import static org.ops4j.pax.exam.CoreOptions.maven;
@@ -341,7 +341,7 @@ public class WebContextPolicyManagerIT {
         return new Option[] {
                 features(KARAF_FEATUERS, "standard"),
                 features(ITEST_FEATURE_URL, "test-dependencies", "security-core-api", "security-handler-api", "configurator", "security-policy-context"),
-                features(PAX_WEB_FEATURE_URL,"pax-http-whiteboard"),
+                features(PAX_WEB_FEATURE_URL, "pax-http-whiteboard"),
                 features(ADMIN_APP_FEATURE_URL, "admin-beta-graphql", "admin-beta-wcpm")
         };
     }
