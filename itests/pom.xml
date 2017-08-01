@@ -28,5 +28,6 @@
     <modules>
         <module>mocks</module>
         <module>tests</module>
+        <module>commons</module>
     </modules>
 </project>

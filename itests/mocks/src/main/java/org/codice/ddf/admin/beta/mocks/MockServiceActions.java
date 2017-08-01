@@ -17,6 +17,7 @@ import static org.codice.ddf.admin.configurator.Status.COMMIT_PASSED;
 import static org.codice.ddf.admin.configurator.Status.ROLLBACK_PASSED;
 
 import java.util.Collections;
+import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -82,6 +83,22 @@ public class MockServiceActions implements ServiceActions {
     @Override
     public Map<String, Object> read(String configPid) throws ConfiguratorException {
         return services.getOrDefault(configPid, Collections.emptyMap());
+    }
+
+    public MockServiceActions onConfigurationPersist(String configPid) {
+        return null;
+    }
+
+    public MockServiceActions expect(Supplier<Void> peristConfigs) {
+        return null;
+    }
+
+    public MockServiceActions thenReturn(Operation<Void> returnOption) {
+        return null;
+    }
+
+    public MockServiceActions mockServiceRead(String configPid, Map<String, Object> returnValue) {
+        return null;
     }
 }
 
