@@ -27,12 +27,18 @@ public class ComponentTestFeatures {
 
     public static final String COMMON_TEST_DEPENDENCIES_FEATURE = "common-test-dependencies";
 
-    public static final String MOCK_CONFIGURATOR_FEATURE = "mock-configurator";
+//    public static final String MOCK_CONFIGURATOR_FEATURE = "mock-configurator";
 
     // TODO: tbatie - 7/31/17 - Fix in ddf
     public static final String SECURITY_POLICY_CONTEXT_FEATURE = "security-policy-context";
 
     public static final String SECURITY_HANDLER_API_FEATURE = "security-handler-api";
+
+    public static final String CONFIGURAT_FIX_FEATURE = "configurator-fix";
+
+    public static final String BASIC_HANDLER_FEATURE = "basic-handler";
+
+    public static final String ALL = "all";
 
     // TODO: tbatie - 7/31/17 - fix version
     public static final MavenArtifactUrlReference COMPONENT_TEST_FEATURE = maven().groupId(
@@ -62,11 +68,6 @@ public class ComponentTestFeatures {
         return this;
     }
 
-    public ComponentTestFeatures mockConfiguratorFeature() {
-        featuresToAdd.add(MOCK_CONFIGURATOR_FEATURE);
-        return this;
-    }
-
     public ComponentTestFeatures securityPolicyContextFeature() {
         featuresToAdd.add(SECURITY_POLICY_CONTEXT_FEATURE);
         return this;
@@ -77,7 +78,22 @@ public class ComponentTestFeatures {
         return this;
     }
 
-    public KarafFeaturesOption config() {
+    public ComponentTestFeatures configuratorFixFeature() {
+        featuresToAdd.add(CONFIGURAT_FIX_FEATURE);
+        return this;
+    }
+
+    public ComponentTestFeatures basicHandlerFeature() {
+        featuresToAdd.add(BASIC_HANDLER_FEATURE);
+        return this;
+    }
+
+    public ComponentTestFeatures all() {
+        featuresToAdd.add(ALL);
+        return this;
+    }
+
+    public KarafFeaturesOption build() {
         return KarafDistributionOption.features(COMPONENT_TEST_FEATURE,
                 featuresToAdd.toArray(new String[0]));
     }

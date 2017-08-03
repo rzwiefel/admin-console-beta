@@ -50,7 +50,7 @@ public class AdminAppFeatures {
         return this;
     }
 
-    public KarafFeaturesOption config() {
+    public KarafFeaturesOption build() {
         return KarafDistributionOption.features(ADMIN_APP_FEATURE_URL,
                 featuresToAdd.toArray(new String[0]));
     }

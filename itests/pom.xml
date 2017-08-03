@@ -29,5 +29,6 @@
         <module>mocks</module>
         <module>tests</module>
         <module>commons</module>
+        <module>ddf-bare</module>
     </modules>
 </project>
